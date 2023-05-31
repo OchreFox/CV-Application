@@ -1,0 +1,17 @@
+.submittedInformation {
+	padding: 20px;
+	border-radius: 4px;
+	margin-top: 20px;
+	text-align: center;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.submittedInformation h2 {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+
+.submittedInformation p {
+	font-size: 1rem;
+	margin: 5px 0;
+}
