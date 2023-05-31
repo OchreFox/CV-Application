@@ -3,8 +3,8 @@ import React from "react";
 type EducationProps = {
 	schoolName: string;
 	degreeName: string;
-	startYear: number | string;
-	endYear: number | string;
+	startYear: string;
+	endYear: string;
 	handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
@@ -18,8 +18,8 @@ const Education = ({
 	const currentYear = new Date().getFullYear();
 
 	return (
-		<div className="personalInfo">
-			<h2>Personal Information</h2>
+		<div className="educationInfo">
+			<h2>Education Experience</h2>
 			<input
 				value={schoolName}
 				type="text"

@@ -4,9 +4,15 @@ body {
 	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-#root {
+#root,
+.userForm,
+h2 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+}
+
+.buttons {
+	margin: 1rem;
 }
