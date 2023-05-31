@@ -1,58 +1,57 @@
 import React from "react";
 
-type EducationProps = {
+type JobProps = {
 	formData: {
-		schoolName: string;
-		degreeName: string;
-		schoolStartDate: string;
-		schoolEndDate: string;
+		companyName: string;
+		positionTitle: string;
+		jobStartDate: string;
+		jobEndDate: string;
 	};
-
 	handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-const Education = ({ formData, handleInputChange }: EducationProps) => {
-	const { schoolName, degreeName, schoolStartDate, schoolEndDate } = formData;
+const Job = ({ formData, handleInputChange }: JobProps) => {
 	const currentYear = new Date().getFullYear();
+	const { companyName, positionTitle, jobStartDate, jobEndDate } = formData;
 
 	return (
-		<div className="educationInfo">
-			<h2>Education Experience</h2>
+		<div className="jobInfo">
+			<h2>Job Experience</h2>
 			<input
-				value={schoolName}
+				value={companyName}
 				type="text"
-				placeholder="School Name"
+				placeholder="Company Name"
 				className="input"
-				name="schoolName"
+				name="companyName"
 				onChange={handleInputChange}
 				required
 			/>
 			<input
-				value={degreeName}
+				value={positionTitle}
 				type="text"
-				placeholder="Degree Name"
+				placeholder="Position Title"
 				className="input"
-				name="degreeName"
+				name="positionTitle"
 				onChange={handleInputChange}
 				required
 			/>
 			<input
-				value={schoolStartDate}
+				value={jobStartDate}
 				type="date"
 				placeholder="Start Year"
 				className="input"
-				name="schoolStartDate"
+				name="jobStartDate"
 				min="1"
 				max={currentYear}
 				onChange={handleInputChange}
 				required
 			/>
 			<input
-				value={schoolEndDate}
+				value={jobEndDate}
 				type="date"
 				placeholder="End Year"
 				className="input"
-				name="schoolEndDate"
+				name="jobEndDate"
 				min="1"
 				max={currentYear}
 				onChange={handleInputChange}
@@ -62,4 +61,4 @@ const Education = ({ formData, handleInputChange }: EducationProps) => {
 	);
 };
 
-export default Education;
+export default Job;

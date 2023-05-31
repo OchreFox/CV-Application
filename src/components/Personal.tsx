@@ -47,7 +47,7 @@ const Personal = ({ formData, handleInputChange }: PersonalProps) => {
 			/>
 			<input
 				value={email}
-				type="text"
+				type="email"
 				placeholder="Email Address"
 				className="input"
 				name="email"
