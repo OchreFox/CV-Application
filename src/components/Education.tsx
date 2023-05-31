@@ -1,20 +1,18 @@
 import React from "react";
 
 type EducationProps = {
-	schoolName: string;
-	degreeName: string;
-	startYear: string;
-	endYear: string;
+	formData: {
+		schoolName: string;
+		degreeName: string;
+		startYear: string;
+		endYear: string;
+	};
+
 	handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-const Education = ({
-	schoolName,
-	degreeName,
-	startYear,
-	endYear,
-	handleInputChange,
-}: EducationProps) => {
+const Education = ({ formData, handleInputChange }: EducationProps) => {
+	const { schoolName, degreeName, startYear, endYear } = formData;
 	const currentYear = new Date().getFullYear();
 
 	return (

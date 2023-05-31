@@ -1,20 +1,18 @@
 import React from "react";
 
 type PersonalProps = {
-	firstName: string;
-	lastName: string;
-	phoneNumber: number | string;
-	email: string;
+	formData: {
+		firstName: string;
+		lastName: string;
+		phoneNumber: number | string;
+		email: string;
+	};
 	handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-const Personal = ({
-	firstName,
-	lastName,
-	phoneNumber,
-	email,
-	handleInputChange,
-}: PersonalProps) => {
+const Personal = ({ formData, handleInputChange }: PersonalProps) => {
+	const { firstName, lastName, phoneNumber, email } = formData;
+
 	return (
 		<div className="personalInfo">
 			<h2>Personal Information</h2>
