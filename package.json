@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Lumi-sg.github.io/CV-Application/",
+  "homepage": "https://ochrefox.github.io/CV-Application/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
