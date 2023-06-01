@@ -7,17 +7,12 @@ on:
     branches: [ main ]
     
 jobs:
-  deploy:
+  build:
+    name: Build
     runs-on: ubuntu-latest
-    permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
     strategy:
       matrix:
         node-version: [18.x]
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3.5.2
@@ -32,8 +27,23 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1.0.8
         with:
-          path: ./dist
+          path: ./dist/
+
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2.0.1
+        with:
+          publish_dir: ./dist
         
